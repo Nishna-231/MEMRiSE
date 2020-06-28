@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+    	
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #16384c;
+}
+.team{
+	position: relative;
+	width:1100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 30px;
+}
+.team .teamcard{
+	position: relative;
+	max-width: 300px;
+	height: 220px;
+	background: #fff;
+	margin: 30px 10px;
+	padding: 20px 15px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+	transition: 0.3s ease-in-out;
+}
+.team .teamcard:hover{
+	height: 320px;
+}
+
+.team .teamcard .teamimg{
+	position: relative;
+	top: -60px;
+	z-index: 1;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.team .teamcard .teamimg img{
+	width: 260px;
+	height: 280px;
+	border-radius: 4px;
+}
+.team .teamcard .teaminfo{
+	position: relative;
+	margin-top: -140px;
+	padding: 10px 15px;
+	text-align: center;
+	color: black;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s ease-in-out;
+}
+.team .teamcard:hover .teaminfo{
+	visibility: visible;
+	opacity: 1;
+	margin-top: -40px;
+	transition-delay: 0.1s;
+}
+.teaminfo h2{
+	padding-bottom: 15px;
+}
+.teaminfo p{
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="team"> 
+  	<div class="teamcard">
+    	<div class="teamimg">
+      		<img src="FlipCard.JPG">
+    	</div>
+	    <div class="teaminfo">
+	      	 <h2>Name</h2>
+	      	<p>Position</p>
+	  	</div>
+	</div>
+</div>  
+
+</body>
+
+  </html>
