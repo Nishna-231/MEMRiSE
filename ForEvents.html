@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ForEvents.html</title>
+
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	padding: 20px;
+	background: #eee;
+	user-select: none;
+}
+[type=radio]{
+	display: none;
+}
+#slider{
+	margin-top: 40px;
+	height: 30vw;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+#slider label{
+	margin: auto;
+	width: 50%;
+	height: 100%;
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	cursor: pointer;
+	transition: transform 0.4s ease;
+}
+#slider label img{
+	border: 1px solid white;
+	border-radius: 10px;
+}
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3{
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+	transform: translate3d(-30%,0,-200px);
+}
+#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+#s5:checked ~ #slide4{
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+	transform: translate3d(-15%,0,-100px);
+}
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5{
+	box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+	transform: translate3d(0,0,0);
+}
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide4, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1{
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+	transform: translate3d(15%,0,-100px);
+}
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2{
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+	transform: translate3d(30%,0,-200px);
+}
+.content{
+	color: #192F59;
+	text-align: center;
+}
+.content p{
+	margin: 0 200px;
+	font-size: 23px;
+}
+#myBtn{
+	background-color: white;
+	color: black;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+  	text-decoration: none;
+  	font-size: 20px;
+  	transition-duration: 0.4s;
+  	cursor: pointer;
+  	border: 2px solid #192F59;
+}
+#myBtn:hover {
+  background-color: #192F59;
+  color: white;
+}
+
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  opacity: 0.9;
+}
+.modal-content{
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 700px;
+}
+.close{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover, .close:focus{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content p{
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	/*text-shadow: 1px 1px 3px white;*/
+}
+.modal-content img{
+	height: 150px;
+	width: 150px;
+}
+.modalImg{
+	padding: 10px;
+}
+
+
+@media all and (max-width: 700px){
+	#slider{
+		height: 46vw;
+	}
+	#slider label{
+		width: 68%;
+		height: 100%;
+	}
+}
+
+</style>
+
+</head>
+
+<body>
+	
+<section id="slider">
+	<input type="radio" name="slider" id="s1">
+	<input type="radio" name="slider" id="s2">
+	<input type="radio" name="slider" id="s3" checked="">
+	<input type="radio" name="slider" id="s4">
+	<input type="radio" name="slider" id="s5">
+
+	<label for="s1" id="slide1">
+		<img src="FlipCard.JPG" height="100%" width="100%">
+	</label>
+	<label for="s2" id="slide2">
+		<img src="Events1.JPG" height="100%" width="100%">
+	</label>
+	<label for="s3" id="slide3">
+		<img src="Events2.JPG" height="100%" width="100%">
+	</label>
+	<label for="s4" id="slide4">
+		<img src="Events3.PNG" height="100%" width="100%">
+	</label>
+	<label for="s5" id="slide5">
+		<img src="Events4.JPG" height="100%" width="100%">
+	</label>
+
+</section>
+	<br> <br> <br>
+	<div class="content">
+		<h1>Event Name</h1> <br>
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed!</p> <br>
+		<button id="myBtn">Read More</button>
+	</div>
+
+	<div id="myModal" class="modal">
+
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed! <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed! <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed!</p> 
+			<!-- <div class="modalImg"> <br>
+			<img src="FlipCard.JPG">
+			<img src="Events1.JPG">
+			<img src="Events2.JPG">
+			<img src="Events3.PNG">
+			<img src="Events4.JPG">
+			</div> -->
+		</div>
+		
+	</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+</body>
+
+</html>
