@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Events</title>
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+<style type="text/css">
+	
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+img{
+	width: 100%;
+}
+body{
+	margin: 10%;
+	width: 80%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #eee;
+	padding: 0 1.5rem;
+}
+.blog-post{
+	width: 100%;
+	max-width: 60rem;
+	height: 27rem;
+	padding: 2rem;
+	background-color: #fff;
+	box-shadow: 0 1.4rem 8rem rgba(0,0,0,.2);
+	display: flex;
+	align-items: center;
+	border-radius: 1rem;
+}
+.blog_img{
+	min-width: 28rem;
+	max-width: 28rem;
+	height: 21rem;
+	position: relative;
+	border-radius: .6rem;
+}
+.blog_img:hover{
+	transform: scale(1.03);
+}
+.blog_img:hover .Slidebox img{
+	opacity: 0.8;
+}
+.blog_img .Slidebox img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: .6rem;
+}
+.blog_img::before{
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: .8rem;
+}
+.img_hover{
+	display: none;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.img_hover button{
+	height: 1.9rem;
+	width: 2rem;
+	border-radius: 50%;
+	background-color: white;
+	color: #192F59;
+	border: 1px solid #192F59;
+	font-size: 1.2rem;
+	padding: 0;
+}
+.img_hover button:hover{
+	background-color: #192F59;
+	color: white;
+}
+.blog_img:hover .img_hover{
+	display: block;
+}
+.blog_info{
+	padding: 2rem;
+}
+.blog_date span{
+	display: block;
+	color: rgba(0,0,0,.6);
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin: 0;
+}
+.blog_title{
+	font-size: 1.8rem;
+	margin: 1rem 0 1.4rem;
+	text-transform: uppercase;
+	color: #192F59;
+}
+.blog_text{
+	margin-bottom: 1rem;
+	font-size: 1.3rem;
+	color: rgba(0,0,0,.7);
+}
+#blog_btn{
+	display: inline-block;
+	padding: 0.5rem 0.8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	color: #192F59;
+	border: 2px solid #192F59;
+	border-radius: .8rem;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: white;
+}
+#blog_btn:hover{
+	background-color: #192F59;
+	 color: white;
+}
+
+@media screen and (max-width: 1072px) {
+	body{
+		margin: 5%;
+		width: 89%;
+	}
+	.blog-post{
+		max-width: 70rem;
+	}
+	.blog_img{
+		min-width: 28rem;
+		max-width: 28rem;
+	}
+	.blog_info{
+		padding: 0.4rem;
+		padding-left: 0.8rem;
+		padding-right: 0;
+	}
+	.blog_date span{
+		font-size: 1.1rem;
+	}
+	.blog_title{
+		font-size: 1.4rem;
+		margin: 0.4rem 0 0.6rem;
+	}
+	.blog_text{
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
+	}
+	#blog_btn{
+		padding: 0.3rem 0.4rem;
+		font-size: 0.8rem;
+		border: 2px solid #192F59;
+	}
+}
+
+@media screen and (max-width: 888px) {
+	body{
+		margin: 2%;
+		margin-top: 5rem;
+		width: 95%;
+	}
+	.blog-post{
+		max-width: 85rem;
+	}
+	.blog_info{
+		padding: 0.4rem;
+		padding-left: 0.7rem;
+		padding-right: 0;
+	}
+	.blog_date span{
+		font-size: 1rem;
+	}
+	.blog_title{
+		font-size: 1.3rem;
+		margin: 0.4rem 0 0.65rem;
+	}
+	.blog_text{
+		margin-bottom: 0.5rem;
+		font-size: 1.15rem;
+	}
+	#blog_btn{
+		padding: 0.3rem 0.4rem;
+		font-size: 0.7rem;
+		border: 2px solid #192F59;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body{
+		margin: 7%;
+		margin-top: 4rem;
+		width: 85%;
+	}
+	.blog-post{
+		width: 85rem;
+		padding: 1rem;
+		padding-top: 2rem;
+		flex-direction: column;
+		height: 38rem;
+	}
+	.blog_img{
+		min-width: 30rem;
+		max-width: 30rem;
+	}
+	.blog_info{
+		padding: 1.6rem;
+		padding-left: 2.7rem;
+		padding-top: 1.8rem;
+	}
+	.blog_date span{
+		font-size: 1rem;
+	}
+	.blog_title{
+		font-size: 1.2rem;
+		margin: 0.4rem 0 0.7rem;
+	}
+	.blog_text{
+		margin-bottom: 0.5rem;
+		font-size: 1.05rem;
+	}
+	#blog_btn{
+		padding: 0.2rem 0.3rem;
+		font-size: 0.7rem;
+		border: 2px solid #192F59;
+	}
+}
+
+@media screen and (max-width: 568px) {
+	body{
+		margin: 2%;
+		margin-top: 2rem;
+		width: 95%;
+	}
+	.blog-post{
+		padding: 1rem;
+		flex-direction: column;
+		height: 28rem;
+	}
+	.blog_img{
+		min-width: 100%;
+		max-width: 100%;
+	}
+	.blog_info{
+		padding: 0.2rem;
+	}
+	.blog_date span{
+		font-size: 0.8rem;
+	}
+	.blog_title{
+		font-size: 1.1rem;
+		margin: 0.4rem 0 0.7rem;
+	}
+	.blog_text{
+		margin-bottom: 0.5rem;
+		font-size: 0.9rem;
+	}
+	#blog_btn{
+		padding: 0.2rem 0.3rem;
+		font-size: 0.6rem;
+		border: 1px solid #192F59;
+	}
+}
+
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  opacity: 0.9;
+}
+.modal-content{
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 700px;
+}
+.close{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #bbb;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover, .close:focus{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content p{
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	word-spacing: 1px;
+	letter-spacing: 1px;
+}
+
+.mySlides {
+	display:none;
+}
+
+/*.Slidebox{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 980px;
+}
+.Slidebox:hover{
+	display: block;
+	cursor: pointer;
+}*/
+
+.w3-button{
+	padding: 8px 16px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+	color: black;
+}
+.w3-black:hover{
+	background-color: black;
+	color: white;
+}
+.w3-display-left{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0,-50%);
+	-ms-transform: translate(0, -50%);
+}
+.w3-display-right{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0,-50%);
+	-ms-transform: translate(0, -50%);
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="blog-post">
+	<div class="blog_img">
+		<div class="Slidebox">
+			<img class="mySlides" src="Events1.jpg" style="width:100%">
+			<img class="mySlides" src="Events2.jpg" style="width:100%">
+			<img class="mySlides" src="Events3.png" style="width:100%">
+			 <img class="mySlides" src="Events4.jpg" style="width:100%">
+		</div>
+		<div class="img_hover">
+			<button id="Btn">+</button>
+		</div>
+	</div>
+	<div class="blog_info">
+		<div class="blog_date">
+			<span> Wednesday </span>
+			<span>July 1 2020</span>
+		</div>
+		<h1 class="blog_title"> Event Name </h1>
+		<p class="blog_text">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed! 
+		</p>
+		<button id="blog_btn">Read More &raquo</button>
+	</div>
+</div>
+
+<div id="myModal" class="modal">
+
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed! <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique vero fuga iure non deleniti fugiat maxime aliquid ducimus sapiente, exercitationem iusto laboriosam at? Accusantium provident quod nobis fugit quibusdam sed! <br> </p> 
+
+			<div class="Slideboxs">
+  <img class="mySlide" src="Events1.jpg" style="width:100%">
+  <img class="mySlide" src="Events2.jpg" style="width:100%">
+  <img class="mySlide" src="Events3.png" style="width:100%">
+  <img class="mySlide" src="Events4.jpg" style="width:100%">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+	
+		</div>
+		
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("blog_btn");
+var btn2 = document.getElementById("Btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn1.onclick = function() {
+  modal.style.display = "block";
+}
+btn2.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+// Slideshow
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+
+// Slideshow for models
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlide");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
